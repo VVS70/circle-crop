@@ -3,6 +3,6 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-    </style>
-
+        <!-- <item name="android:background">#424ABD</item> -->
+     </style>
 </resources>
