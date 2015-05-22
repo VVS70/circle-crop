@@ -8,33 +8,22 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:gravity="center_vertical|center_horizontal">
+        android:layout_height="130dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#D43F1E">
 
-        <ImageButton
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:id="@+id/imageButton2"
-            android:background="@drawable/tmp2" />
-
-        <ImageButton
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:id="@+id/imageButton"
-            android:background="@drawable/tmp1"
-            android:layout_toRightOf="@+id/imageButton2"
-            android:layout_marginLeft="50dp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="130dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:id="@+id/user_image_contaner"
-        android:gravity="top">
+        android:gravity="center_horizontal|top"
+        android:background="#E8FC0A">
 
 
     </RelativeLayout>

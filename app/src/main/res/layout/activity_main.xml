@@ -9,7 +9,8 @@
     <RelativeLayout
         android:id="@+id/top"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="10dp"
+        android:background="#2C27D6">
 
     </RelativeLayout>
     <RelativeLayout
@@ -17,7 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="10dp"
+        android:background="#A3A1F0">
 
     </RelativeLayout>
 

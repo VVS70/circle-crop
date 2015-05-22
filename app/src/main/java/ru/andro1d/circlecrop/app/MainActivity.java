@@ -1,5 +1,6 @@
 package ru.andro1d.circlecrop.app;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -12,6 +13,7 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 
 import android.util.Log;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -35,10 +37,10 @@ public class MainActivity extends Activity {
         ft.add(R.id.container, aapFrag);
         //ft.addToBackStack("app_move");
         ft.commit();
-        /*
-        ActionBar actionBar = getSupportActionBar();
+
+        ActionBar actionBar = getActionBar();
         actionBar.hide();
-        */
+
     }
 
     @Override
@@ -54,7 +56,25 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+            switch (item.getItemId()) {
+                case R.id.action_camera: {
+                    Toast.makeText(this, "CAMERA", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                case R.id.action_folder: {
+                    Toast.makeText(this, "Gallery", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                case R.id.action_save: {
+                    Toast.makeText(this, "Save", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                case R.id.action_settings: {
+                    Toast.makeText(this, "Settings", Toast.LENGTH_LONG).show();
+                    break;
+                }
 
+            }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -63,7 +83,6 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-
     public String getFilePath() {
         return filePath;
     }
@@ -71,29 +90,6 @@ public class MainActivity extends Activity {
         filePath=str;
     }
 
-/*
-    Resources resources = context.getResources();
-    int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
-    if (resourceId > 0) {
-    return resources.getDimensionPixelSize(resourceId);
-    }
-*/
     public static Context getAppContext() {return MainActivity.context; }
-    public Point getDisplaySize() {
 
-        DisplayMetrics displayMetrics = getApplicationContext().getResources().getDisplayMetrics();
-        float dpHeight = displayMetrics.heightPixels / displayMetrics.density;
-        float dpWidth  = displayMetrics.widthPixels  / displayMetrics.density;
-
-        /*
-        float dpHeight = getWindow().getDecorView().getWidth();
-        float dpWidth  = getWindow().getDecorView().getHeight();
-        */
-
-        Point res = new Point();
-        res.set((int) ((dpWidth - 10) * displayMetrics.density), (int) ((dpHeight - (76+5+70+90)) * displayMetrics.density));
-
-
-        return res;
-    }
 }
