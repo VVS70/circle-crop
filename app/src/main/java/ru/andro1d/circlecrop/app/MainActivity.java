@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,6 +23,7 @@ public class MainActivity extends Activity {
     private static final String CAMERA_FILE_PREFIX = "IMG_";
     private static final String CAMERA_FILE_EXTENSION = ".jpg";
     private static String photoPath = null;
+    public static Boolean needSplash = true;
     private String filePath = "";
     private static Context context;
 
@@ -31,16 +33,19 @@ public class MainActivity extends Activity {
         MainActivity.context = getApplicationContext();
         setContentView(R.layout.activity_main);
 
-        Fragment aapFrag = new SplashScreen();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.setCustomAnimations(R.animator.show_frame, R.animator.hide_frame);
-        ft.add(R.id.container, aapFrag);
-        //ft.addToBackStack("app_move");
-        ft.commit();
+        if (needSplash) {
+            Fragment aapFrag = new SplashScreen();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.setCustomAnimations(R.animator.show_frame, R.animator.hide_frame);
+            ft.add(R.id.container, aapFrag);
+            //ft.addToBackStack("app_move");
+            ft.commit();
 
-        ActionBar actionBar = getActionBar();
-        actionBar.hide();
+            ActionBar actionBar = getActionBar();
+            actionBar.hide();
 
+            needSplash = false;
+        }
     }
 
     @Override
@@ -84,10 +89,22 @@ public class MainActivity extends Activity {
     }
 
     public String getFilePath() {
-        return filePath;
+        if (filePath==""){
+    SharedPreferences sPref;
+    sPref = getPreferences(MODE_PRIVATE);
+        return sPref.getString("#FileName", "");
+        } else {
+            return filePath;
+        }
     }
+
     public void setFilePath(String str) {
         filePath=str;
+        SharedPreferences sPref;
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString("#FileName", str);
+        ed.commit();
     }
 
     public static Context getAppContext() {return MainActivity.context; }
