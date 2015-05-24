@@ -9,22 +9,33 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:background="#D43F1E">
+        android:gravity="center_vertical|center_horizontal">
 
+        <view
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            class="ru.andro1d.circlecrop.app.ColorPicker"
+            android:id="@+id/view"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
-
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
         android:id="@+id/user_image_contaner"
-        android:gravity="center_horizontal|top"
-        android:background="#E8FC0A">
-
-
+        android:gravity="center_vertical|center_horizontal|top">
     </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
 </RelativeLayout>
