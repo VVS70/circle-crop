@@ -3,39 +3,80 @@
                 android:id="@+id/fragment_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                >
+    android:gravity="center_horizontal"
+    android:background="@drawable/bkg4px">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:gravity="center_vertical|center_horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+            <CheckBox
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                android:id="@+id/checkBox"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft ="true"
+                android:layout_marginLeft="40dp"
+                android:button="@drawable/resize" />
 
-        <view
-            android:layout_width="wrap_content"
+            <view
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        class="ru.andro1d.circlecrop.app.ColorPicker"
+                        android:id="@+id/color_picker"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@+id/checkBox"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/bkg_picker"
+                android:layout_alignParentRight="false" />
+
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            class="ru.andro1d.circlecrop.app.ColorPicker"
-            android:id="@+id/view"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:id="@+id/imageView2"
+            android:background="@drawable/bkg_shadow"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="130dp"
+            android:layout_marginBottom="10dp" />
+
     </RelativeLayout>
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        card_view:cardCornerRadius="4dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/user_image_contaner"
-        android:gravity="center_vertical|center_horizontal|top">
+        android:layout_marginTop="130dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="4dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentEnd="false"
+            android:measureAllChildren="false"
+            android:foregroundGravity="center_vertical|center_horizontal">
+
+        </android.support.v7.widget.CardView>
+
     </RelativeLayout>
-    </android.support.v7.widget.CardView>
 
 </RelativeLayout>
