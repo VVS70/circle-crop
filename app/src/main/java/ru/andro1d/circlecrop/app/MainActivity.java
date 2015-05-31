@@ -108,6 +108,7 @@ public class MainActivity extends Activity {
                 }
                 case R.id.action_save: {
                     Fragment fr = getFragmentManager().findFragmentById(R.id.container);
+
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.addToBackStack("app_move");
                     ft.hide(fr);
