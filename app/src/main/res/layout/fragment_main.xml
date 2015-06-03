@@ -45,12 +45,13 @@
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/seekBar"
+            android:id="@+id/radius_seekBar"
             android:layout_alignBottom="@+id/imageView2"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="170dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:indeterminate="false" />
 
     </RelativeLayout>
 

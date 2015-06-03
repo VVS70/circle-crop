@@ -38,7 +38,6 @@ public class MainActivity extends Activity {
     private static final int TAKE_PHOTO = 1;
     private static final String CAMERA_FILE_PREFIX = "IMG_";
     private static final String CAMERA_FILE_EXTENSION = ".jpg";
-    private static String photoPath = null;
     public static Boolean needSplash = true;
     private String filePath = "";
     private static Context context;
@@ -100,7 +99,7 @@ public class MainActivity extends Activity {
                     }
                     break;
                 }
-                case R.id.action_folder: {
+                case R.id.action_gallery: {
                     Intent intent = new Intent(Intent.ACTION_PICK);
                     intent.setType("image/*");
                     startActivityForResult(intent, SELECT_PICTURE_ACTIVITY_REQUEST_CODE);
@@ -108,7 +107,6 @@ public class MainActivity extends Activity {
                 }
                 case R.id.action_save: {
                     Fragment fr = getFragmentManager().findFragmentById(R.id.container);
-
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.addToBackStack("app_move");
                     ft.hide(fr);
@@ -122,13 +120,8 @@ public class MainActivity extends Activity {
                     Toast.makeText(this, "under construction", Toast.LENGTH_LONG).show();
                     break;
                 }
-
             }
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+            return super.onOptionsItemSelected(item);
     }
 
     public String getFilePath() {
@@ -187,10 +180,8 @@ public class MainActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-
         Fragment fr = getFragmentManager().findFragmentById(R.id.container);
         OnBackPressedListener backPressedListener = null;
-
             if (fr instanceof  OnBackPressedListener) {
                 backPressedListener = (OnBackPressedListener) fr;
             }
