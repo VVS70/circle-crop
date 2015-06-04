@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/fragment_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    android:gravity="left">
+
+
+    <RelativeLayout
+        android:layout_width="135dp"
+        android:layout_height="match_parent"
+        android:id="@+id/user_image"
+        android:gravity="center_horizontal">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox"
+            android:button="@drawable/resize"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false" />
+
+        <view
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            class="ru.andro1d.circlecrop.app.ColorPicker"
+            android:id="@+id/color_picker"
+            android:layout_below="@+id/checkBox"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bkg_picker"
+            android:layout_marginRight="5dp" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radius_seekBar"
+            android:layout_below="@+id/checkBox"
+            android:layout_centerHorizontal="true"
+            android:focusableInTouchMode="false"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView3"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/bkg_shadow_land" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="130dp"
+        android:gravity="center_horizontal|clip_vertical">
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="4dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"></android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+</RelativeLayout>
