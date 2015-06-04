@@ -110,8 +110,10 @@ public class SaveResult extends Fragment implements MainActivity.OnBackPressedLi
 
                             paint.setColor(Color.WHITE);
                             canvas.drawPaint(paint);
+
                             canvas.save();
                             canvas.drawBitmap(b, TransformParameters.matrix, paint);
+
                             Path path = new Path();
                             path.addRect(0.0f, 0.0f, outputBitmap.getWidth(), outputBitmap.getHeight(), Path.Direction.CCW);
                             Path cPath = new Path();
@@ -140,7 +142,6 @@ public class SaveResult extends Fragment implements MainActivity.OnBackPressedLi
                                     Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath()+"/";
 
                             String fileName = folderToSave+"R_"+Long.toHexString(System.currentTimeMillis())+".jpg";
-
                             OutputStream fOut = null;
 
                             File file = new File(fileName);
@@ -171,6 +172,8 @@ public class SaveResult extends Fragment implements MainActivity.OnBackPressedLi
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getActivity(), "cancel", Toast.LENGTH_SHORT).show();
+                v.getRootView().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_BACK));
+                v.getRootView().dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_BACK));
             }
         });
         final TextView txt = (TextView) v.findViewById(R.id.dlg_set_size_text);

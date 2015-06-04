@@ -52,7 +52,7 @@
                 android:text="Selected:   50x50"
                 android:id="@+id/dlg_set_size_text"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="100dp"
             android:layout_alignParentEnd="true"
             android:paddingRight="20dp"
             android:textColor="#1859F0" />
@@ -67,6 +67,20 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:paddingBottom="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Maximum image size depends on the amount of memory on your device"
+            android:id="@+id/textView"
+            android:layout_below="@+id/save_file_label"
+            android:layout_alignStart="@+id/save_dlg_set_size_seekBar"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:textColor="#1859F0"
+            android:textSize="16dp"
+            android:textIsSelectable="false" />
 
     </RelativeLayout>
 
